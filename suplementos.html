@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guardar Producto</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 id="titulo" class="text-md-center">Bienvenido</h1>
+
+      <div class="row">
+        <div id="col-md-12 mt-5">
+          <table class="table table-bordered border-primary">
+            <tr>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Perfil</th>
+              <th>Terminar</th>
+            </tr>
+            <tr>
+              <td id="userName"></td>
+              <td id="userEmail"></td>
+              <td id="userType"></td>
+              <td><a id="cerrarSession" href="#">Cerrar Sessión</a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div id="alerta" class="alert alert-info alert-dismissible">
+        <strong>Información:</strong> <span id="mensaje"></span>
+        <button class="close">&times;</button>
+      </div>
+      <div class="row">
+        <div id="nuevoRegistro" class="col-md-12 mt-1">
+          <button type="button" class="btn btn-primary text-center" onclick="activaNuevo();">Nuevo</button>
+        </div>
+        <div class="col-md-12 mt-0">
+          <div id="listado"></div> 
+        </div>
+      </div>
+      <div id="nuevo" class="row">
+        <div class="col-md-12 mt-2">
+          <form>
+            <div class="mb-3">
+              <label for="inputReference" class="form-label">Referencia</label>
+              <input type="text" class="form-control mb-3" id="inputReference">
+              <p class="text-danger err">*Debe ingresar el campo Referencia.</p>
+            </div>
+            <div class="mb-3">
+              <label for="inputBrand" class="form-label">Marca</label>
+              <input type="text" class="form-control mb-3" id="inputBrand">
+              <p class="text-danger err">*Debe ingresar el campo Marca</p>
+            </div>
+            <div class="mb-3">
+              <label for="inputCategory" class="form-label">Categoría</label>
+              <input type="text" class="form-control mb-3" id="inputCategory">
+              <p class="text-danger err">*Debe ingresar el campo Password</p>
+            </div>
+            <div class="mb-3">
+              <label for="inputObjetive" class="form-label">Objetivo</label>
+              <input type="text" class="form-control mb-3" id="inputObjetive">
+              <p class="text-danger err">*Debe ingresar el campo Objetivo</p>
+            </div>
+            <div class="mb-3">
+              <label for="inputDescription" class="form-label">Descripcción</label>
+              <input type="text" class="form-control mb-3" id="inputDescription">
+              <p class="text-danger err">*Debe ingresar la descripcción</p>
+            </div>
+            <div class="mb-3">
+              <label for="inputAvailability" class="form-label">Disponibilidad</label>
+              <select id="inputAvailability">
+                <option>--</option>
+                <option value="true">SI</option>
+                <option value="false">NO</option>
+              </select>
+              <p class="text-danger err">*Debe ingresar el campo Disponibilidad</p>
+            </div>
+            <div class="mb-3">
+              <label for="inputPrice" class="form-label">Precio</label>
+              <input type="text" class="form-control mb-3" id="inputPrice">
+              <p class="text-danger err">*Debe ingresar el campo Precio</p>
+            </div>
+            <div class="mb-3">
+              <label for="inputQuantity" class="form-label">Cantidad</label>
+              <input type="text" class="form-control mb-3" id="inputQuantity">
+              <p class="text-danger err">*Debe ingresar el campo Cantidad</p>
+            </div>
+            <div class="mb-3">
+              <label for="inputImage" class="form-label">Imagen</label>
+              <input type="text" class="form-control mb-3" id="inputImage">
+              <p class="text-danger err">*Debe ingresar el campo Imagen</p>
+            </div>
+
+            <div class="form-group text-center">
+              <button id="cancel" type="button" class="btn btn-primary text-center mt-5" onclick="estadoInicial()";>Cancelar</button>
+              <button id="register" type="button" class="btn btn-primary text-center mt-5" onclick="registrar()"; >Ingresar</button>
+            </div>   
+          </form>
+        </div> 
+      </div>
+      
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      <script src="js/productos/listarproductos.js"></script>
+      <script src="js/productos/registrarproducto.js"></script>
+      <script src="js/util/util.js"></script>
+    </div>
+  </body>
+</html>
